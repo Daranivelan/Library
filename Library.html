@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Library.css">
+</head>
+<body>
+    <script src="Library.js"></script>
+    <header class="header">
+        <p class="Title">Book Blend</p>
+        <div class="sub-header">
+            <div class="alignImg">
+                <image src="Assets/Book_img.png" class="bookImg"></image>
+                <button class = "myBooks" id="myBooksBtn">My Books</button>
+            </div>
+            <div class="alignImg">
+                <button class = "btn" id="loginBtn">Login</button>
+            </div>
+            <button class = "btn" id="signupBtn">Signup</button>
+        </div>
+    </header>
+    <div class="searchBox">
+        <input type="input" placeholder="Search For Books..." class="mySearch" id="mySearch" onkeyup="loadBooks()">
+    </div>
+    <div id="books" class="alignBook">
+        
+    </div>
+    <div class="bookSection" id="bookSection">
+        <header>
+            <h1 class="myBookSection">My Books</h1>
+        </header>
+        <span onclick="closeModal()" class="close" title="Close Modal">&times;</span>
+        <div id="myBooks" class="alignBook"></div>
+    </div>
+    <div class="bookSection" id="login">
+        <header>
+            <h1 class="myBookSection">Login</h1>
+        </header>
+        <span onclick="closeModal()" class="close" title="Close Modal">&times;</span>
+        <div id="loginPage"></div>
+    </div>
+    <div class="bookSection" id="signup">
+        <header>
+            <h1 class="myBookSection">Sign up</h1>
+        </header>
+        <span onclick="closeModal()" class="close" title="Close Modal">&times;</span>
+        <div id="signupPage"></div>
+    </div>
+</body>
+</html>

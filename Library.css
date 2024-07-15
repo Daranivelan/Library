@@ -1,0 +1,191 @@
+body {
+  background-color: #3A383A;
+  margin: 0%;
+}
+
+.header {
+  background-color: rgb(45, 43, 43);
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  top: 0;
+  left: 0;
+  position: sticky;
+}
+
+.sub-header{
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 30%;
+}
+
+.btn {
+  background-color: rgb(45, 43, 43);
+  color: rgb(123, 202, 254);
+  font-size: 15px;
+  border-color: rgb(123, 202, 254);
+  border: 0;
+  transition: border 0.2s;
+  transition-delay: 0.15s;
+}
+
+.btn:hover {
+  cursor: pointer;
+  border-bottom: 3px solid;
+}
+
+.mySearch {
+  margin-top: 50px;
+  background-color: rgb(45, 43, 43);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  width: 400px;
+}
+
+.searchBox {
+  text-align: center;
+  margin-top: 75px;
+}
+
+.personImg 
+{
+  height: 40px;
+  width:52px;
+}
+
+.bookImg {
+  height: 32px;
+  width: 36px;
+} 
+
+.alignImg
+{
+  display: flex;
+  justify-content: center;
+}
+
+.book {
+  background-color: rgb(45, 43, 43);
+  color: white;
+  padding: 30px;
+  width: 200px;
+}
+
+.book button {
+  display: block;
+  margin: auto;
+  width: 60%;
+}
+
+.book img {
+  height: 250px;
+  width: 200px;
+}
+
+.book img:hover,
+button:hover {
+  cursor: pointer;
+}
+
+.alignBook {
+  margin-top: 70px;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 50px;
+}
+
+.btn1 {
+  border: none;
+  background-color: rgb(255, 73, 73);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.borrowed-btn {
+  background-color: rgb(53, 148, 9) !important;
+  color: white;
+}
+
+.myBooks {
+  background-color: rgb(45, 43, 43);
+  color: rgb(123, 202, 254);
+  font-size: 15px;
+  border-color: rgb(123, 202, 254);
+  border: 0;
+  transition: border 0.2s;
+  transition-delay: 0.15s;
+}
+
+.myBooks:hover {
+  cursor: pointer;
+  border-bottom: 3px solid;
+}
+
+.bookSection {
+	display: none; 
+	position: fixed; 
+	z-index: 1; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	overflow: auto; 
+	background-color: #474e5d;
+	padding-top: 50px;
+}
+
+.close {
+	position: absolute;
+	right: 35px;
+	top: 15px;
+	font-size: 40px;
+	font-weight: bold;
+	color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+	color: #f44336;
+	cursor: pointer;
+}
+
+.myBookSection
+{
+	color: rgb(123, 202, 254);
+	text-align: center;
+	border-bottom: 5px red solid;
+}
+
+.userName, .loginBtn {
+  text-align: center;
+  color: white;
+  margin: 25px;
+}
+
+.userName input {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 3px;
+}
+
+.loginBtn button{
+  padding: 5px 15px;
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(123, 202, 254);
+}
+
+.Title {
+  color: rgb(123, 202, 254);
+  margin-left: 40px;
+  font-size: 24px;
+}
