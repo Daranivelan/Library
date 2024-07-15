@@ -241,6 +241,8 @@ let bookData = [
     },
 ];
 
+let users = JSON.parse(localStorage.getItem('users')) || [];
+
 const loadBooks = () => {
 	let htmlData = ``;
 	let searchText = document.getElementById("mySearch").value.toLowerCase();
@@ -349,27 +351,27 @@ const loadSignupPage = () => {
     htmldata += `<form>
         <div class="userName">
             <span>FirstName: </span>
-            <input id="username" type="text" placeholder="Firstname...">
+            <input id="firstname" type="text" placeholder="Firstname...">
         </div>
         <div class="userName">
             <span>LastName: </span>
-            <input id="username" type="text" placeholder="Lastname...">
+            <input id="lastname" type="text" placeholder="Lastname...">
         </div>
         <div class="userName">
             <span>Address: </span>
-            <input id="username" type="text" placeholder="Lastname...">
+            <input id="address" type="text" placeholder="Lastname...">
         </div>
         <div class="userName">
             <span>Phone.No: </span>
-            <input id="username" type="text" placeholder="Lastname...">
+            <input id="phone" type="text" placeholder="Lastname...">
         </div>
         <div class="userName">
             <span>EmailID: </span>
-            <input id="username" type="text" placeholder="EmailID...">
+            <input id="email" type="text" placeholder="EmailID...">
         </div>
         <div class="userName">
             <span>Password: </span>
-            <input id="username" type="password" placeholder="Password...">
+            <input id="password" type="password" placeholder="Password...">
         </div>
         <div class="loginBtn">
             <button type="submit" onclick="signupCloseModal(event)">SignUp</button>
@@ -387,55 +389,47 @@ const closeModal = () => {
 
 const loginCloseModal = (e) => {
     e.preventDefault();
-    const signin = document.querySelector("#username1");
-    const pass = document.querySelector("#pass");
-
-    let flag;
-    if (signin.value === "abcd@gmail.com" && pass.value === "12345")
-    {
-        flag = true;
-    }
-    else
-    {
-        flag = false;
-    }
     
+    const username = document.getElementById("username1").value;
+    const pass = document.getElementById("pass").value;
+
+    let flag = 0;
+
+    users.forEach(user => {
+        if (`${user.email}` === username)
+        {
+            if (`${user.password}` === pass)
+            {
+                document.getElementById("login").style.display = "none";
+            }
+            else
+            {
+                flag = 1;
+            }
+        }
+        else
+        {
+            flag = 1;
+        }
+    });
     if (flag)
     {
-        document.getElementById("login").style.display = "none";
-    }
-    else
-    {
-        alert("Please Fill all the Deatils... Or Invalid Login... ");
-        document.getElementById("login").style.display = "block";
+        flag = 0;
+        alert("Invalid username or password");
     }
 }
 
 const signupCloseModal = (e) => {
     e.preventDefault();
-    const signup = document.querySelectorAll("#username");
-
-    let flag;
-    for (const x of signup)
-    {
-        if (x.value.trim() === "")
-        {
-            flag = false;
-            break;
-        }
-        else
-        {
-            flag = true;
-        }
-    }
     
-    if (flag)
-    {
-        document.getElementById("signup").style.display = "none";
-    }
-    else
-    {
-        alert("Please Fill all the Deatils....");
-        document.getElementById("signup").style.display = "block";
-    }
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    const user = {email, password};
+
+    users.push(user);
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+    alert("Saved !");
 }
